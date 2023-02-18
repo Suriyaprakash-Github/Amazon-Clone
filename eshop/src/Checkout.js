@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Checkout.css";
 import CheckoutProduct from "./CheckoutProduct";
 import Subtotal from "./Subtotal.js";
-import { useStateValue } from "./StateProvider";
+// import { useStateValue } from "./StateProvider";
+import { StateContext } from "./StateProvider";
 
 function Checkout() {
-  const [{ basket }, dispatch] = useStateValue();
+  // const [basket, dispatch] = useStateValue();
+  const [{ basket }] = useContext(StateContext);
+
   return (
     <div className="checkout">
       <div className="checkout__left">

@@ -1,14 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
 import StoreIcon from "@mui/icons-material/Store";
 import SearchIcon from "@mui/icons-material/Search";
 import { Link } from "react-router-dom";
-import { useStateValue } from "./StateProvider";
+// import { useStateValue } from "./StateProvider";
+import { StateContext } from "./StateProvider";
+
 import "./Header.css";
 
 const Header = (props) => {
-  const [{ basket }, dispatch] = useStateValue();
+  // const [{ basket }, dispatch] = useStateValue();
+  const [{ basket }] = useContext(StateContext);
+
   return (
     <div className="header">
       <Link to="/" style={{ textDecoration: "none" }}>
