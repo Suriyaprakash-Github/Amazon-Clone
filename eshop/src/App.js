@@ -1,9 +1,10 @@
 import "./App.css";
 
-import React, { Fragment } from "react";
+import React from "react";
 import Header from "./Header";
 import Home from "./Home";
 import Checkout from "./Checkout";
+import Login from "./Login";
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
@@ -12,6 +13,14 @@ function App() {
     <div className="App">
       <Router>
         <Routes>
+          <Route
+            path="/login"
+            element={
+              <>
+                <Login />
+              </>
+            }
+          />
           <Route
             path="/checkout"
             element={

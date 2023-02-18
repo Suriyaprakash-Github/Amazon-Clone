@@ -11,6 +11,7 @@ function Product({ id, title, image, price, rating }) {
       item: {
         key: Math.random(),
         id: id,
+        title: title,
         image: image,
         price: price,
         rating: rating,
