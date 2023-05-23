@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Subtotal.css";
 
-import { useStateValue } from "./StateProvider";
+// import { useStateValue } from "./StateProvider";
+import { StateContext } from "./StateProvider";
+
 import { getBasketTotal } from "./Reducer";
 
 function Subtotal() {
-  const [{ basket }, dispatch] = useStateValue();
+  // const [{ basket }, dispatch] = useStateValue();
+  const [{ basket }] = useContext(StateContext);
+
   const value = getBasketTotal(basket);
   return (
     <div className="subtotal">
